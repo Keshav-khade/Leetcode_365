@@ -3,6 +3,7 @@ def long_prefix(strs):
     if len(strs) == 0:
         return ""
     elif len(strs) == 1:
+        """lists which has 1 element this is efficient rather than checking for o(n) times"""
         return strs[0]
 
     strs.sort()
@@ -45,3 +46,4 @@ def longest(strs):
 s = ["a"]
 res = longest(s)
 print(res)
+
