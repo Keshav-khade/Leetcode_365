@@ -55,3 +55,29 @@ if not flag:
 """
 
 
+# final approach for this question sliding window
+nums = [1,2,3,1]
+k = 3
+
+# nums = [1,0,1,1]
+# k = 1
+
+# nums = [1,2,3,1,2,3]
+# k = 2
+
+def duplicate2(nums,k):
+    j = 0
+    seen = set()
+    for i in range(len(nums)):
+        if nums[i] in seen:
+                return True
+        seen.add(nums[i])
+        if len(seen) > k:
+            seen.remove(nums[j])
+            j += 1
+    return False
+
+res = duplicate2(nums,k)
+print(res)
+
+
